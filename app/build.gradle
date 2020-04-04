@@ -17,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets{
+        main{
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
@@ -26,4 +31,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    // SDK在解析请求返回的JSON数据时用到
+    api 'com.google.code.gson:gson:2.8.1'
+// SDK联网框架使用okhttp
+    api 'com.squareup.okhttp3:okhttp:3.11.0'
+// SDK联网框架使用okhttp
+    api 'com.squareup.okio:okio:1.15.0'
+// v4包
+    api 'com.android.support:support-v4:29.0.0'
+
 }
